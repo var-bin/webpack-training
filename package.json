@@ -1,0 +1,22 @@
+{
+  "name": "webpack-training",
+  "version": "1.0.0",
+  "description": "Improve skills in Webpack and other awesome tools",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "es5",
+    "babel",
+    "css",
+    "html"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT",
+  "devDependencies": {
+    "node-static": "^0.7.9",
+    "webpack": "^1.15.0"
+  }
+}
