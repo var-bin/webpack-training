@@ -11,5 +11,7 @@ module.exports = {
 
   watchOptions: {
     aggregateOptions: 100
-  }
+  },
+
+  devtool: "source-map"
 };
