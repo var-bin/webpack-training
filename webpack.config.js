@@ -3,6 +3,7 @@
 const webpack = require("webpack");
 
 const DEV_ENV = "development";
+const PRODUCTION_ENV = "production";
 const NODE_ENV = process.env.NODE_ENV || DEV_ENV;
 
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(NODE_ENV),
+      DEV_ENV: JSON.stringify(DEV_ENV),
       LANG: '"ru"'
     })
   ],
@@ -48,3 +50,16 @@ module.exports = {
     ]
   }
 };
+
+if (NODE_ENV == PRODUCTION_ENV) {
+  module.exports.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        // don't show anreachable variables etc
+        warnings: false,
+        drop_console: false,
+        unsafe: true
+      }
+    })
+  )
+}
