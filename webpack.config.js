@@ -1,10 +1,14 @@
 "use strict";
 
 const webpack = require("webpack");
+const path = require("path");
 
 const DEV_ENV = "development";
 const PRODUCTION_ENV = "production";
 const NODE_ENV = process.env.NODE_ENV || DEV_ENV;
+
+const SRC_PATH = path.join(__dirname, "src")
+const DEST_PATH = path.join(__dirname, "public");
 
 module.exports = {
   entry: "./home",
