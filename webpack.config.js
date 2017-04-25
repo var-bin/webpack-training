@@ -42,7 +42,11 @@ module.exports = {
       LANG: '"ru"'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: COMMON_NAME
+      name: COMMON_NAME,
+      chunks: [
+        "about",
+        "home"
+      ]
     })
   ],
 
