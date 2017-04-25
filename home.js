@@ -2,8 +2,10 @@
 
 "use strict";
 
-let welcome = require("./welcome");
+import { welcome } from "./welcome";
 
-welcome("home");
+if (NODE_ENV == "development") {
+  welcome("home");
+}
 
-exports.welcome = welcome;
+export { welcome };
