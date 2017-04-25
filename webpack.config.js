@@ -15,7 +15,8 @@ module.exports = {
 
   entry: {
     home: "./home/home",
-    about: "./about/about"
+    about: "./about/about",
+    welcome: "./welcome/welcome"
   },
 
   output: {
@@ -33,6 +34,7 @@ module.exports = {
   devtool: NODE_ENV == DEV_ENV ? "cheap-inline-module-source-map" : null,
 
   plugins: [
+    new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify(NODE_ENV),
       DEV_ENV: JSON.stringify(DEV_ENV),
