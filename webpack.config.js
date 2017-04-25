@@ -11,10 +11,17 @@ const SRC_PATH = path.join(__dirname, "src")
 const DEST_PATH = path.join(__dirname, "public");
 
 module.exports = {
-  entry: "./home",
+  context: SRC_PATH,
+
+  entry: {
+    home: "./home/home",
+    about: "./about/about"
+  },
+
   output: {
-    filename: "build.js",
-    library: "home"
+    path: DEST_PATH,
+    filename: "[name].js",
+    library: "[name]"
   },
 
   watch: NODE_ENV == DEV_ENV,
