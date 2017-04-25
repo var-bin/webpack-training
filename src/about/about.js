@@ -5,7 +5,7 @@
 import { welcome } from "../welcome/welcome";
 
 if (NODE_ENV == DEV_ENV) {
-  welcome("home");
+  welcome("about");
   console.log(NODE_ENV);
 }
 
