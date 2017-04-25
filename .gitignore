@@ -6,3 +6,6 @@ build*
 
 # public/*.js
 public/*.js
+
+# *.sublime*
+*.sublime*
