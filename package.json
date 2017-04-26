@@ -24,6 +24,7 @@
     "webpack": "^1.15.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "babel-runtime": "^6.23.0",
+    "moment": "^2.18.1"
   }
 }
