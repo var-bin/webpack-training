@@ -17,11 +17,13 @@ module.exports = {
 
   entry: {
     home: "./home/home",
-    about: "./about/about"
+    about: "./about/about",
+    loadMomentJs: "./loadMomentJS/loadMomentJs"
   },
 
   output: {
     path: DEST_PATH,
+    publicPath: "/",
     filename: "[name].js",
     library: "[name]"
   },
@@ -51,7 +53,7 @@ module.exports = {
   ],
 
   resolve: {
-    modulesDirectories: ["node_modules"],
+    modulesDirectories: ["node_modules", "node_modules/pdfmake/build/"],
     extentions: ["", ".js"]
   },
 
