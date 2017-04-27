@@ -61,7 +61,10 @@ module.exports = {
         "about",
         "home"
       ]
-    })
+    }),
+
+    new webpack.ContextReplacementPlugin( /moment[\\\/]locale$/, /(en-gb.js)$/ ),
+    new webpack.ContextReplacementPlugin( /node_modules\/lodash\/lodash.js/, /defaults.js$/ )
   ],
 
   // Options affecting the resolving of modules.
