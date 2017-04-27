@@ -21,8 +21,7 @@ module.exports = {
   // http://webpack.github.io/docs/configuration.html#entry
   entry: {
     home: "./home/home",
-    about: "./about/about",
-    loadMomentJs: "./loadMomentJS/loadMomentJs"
+    about: "./about/about"
   },
 
   // Output options tell Webpack how to write the compiled files to disk.
