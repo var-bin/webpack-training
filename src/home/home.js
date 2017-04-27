@@ -9,4 +9,10 @@ if (NODE_ENV == DEV_ENV) {
   console.log(NODE_ENV);
 }
 
+require.ensure(["../loadVendors/loadVendors"], (require) => {
+  let vendors = require("../loadVendors/loadVendors");
+
+  vendors.loadVendors();
+});
+
 export { welcome };
