@@ -24,10 +24,10 @@ function loadVendors() {
     let vfsFonts = require("bundle!vfs_fonts.js");
 
     require.ensure(["lodash"], (require) => {
-      let _ = require("lodash");
+      let defaults = require("lodash/defaults");
 
-      alert(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
-      console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
+      alert(defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
+      console.log(defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
     }, "vendors")
   }
 

@@ -9,4 +9,20 @@ if (NODE_ENV == DEV_ENV) {
   console.log(NODE_ENV);
 }
 
+$.when( $.ready ).then(function() {
+  let $jqButton = $("#testJQuery");
+
+  function testJQueryHandler(e) {
+    e.preventDefault();
+
+    let $listItems = $("ul > li");
+
+    alert($listItems);
+
+    console.log($listItems);
+  }
+
+  $jqButton.on("click", testJQueryHandler);
+});
+
 export { welcome };
