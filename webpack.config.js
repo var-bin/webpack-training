@@ -63,8 +63,11 @@ module.exports = {
       ]
     }),
 
-    new webpack.ContextReplacementPlugin( /moment[\\\/]locale$/, /(en-gb.js)$/ ),
-    new webpack.ContextReplacementPlugin( /node_modules\/lodash\/lodash.js/, /defaults.js$/ )
+    new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /(en-gb)$/),
+
+    new webpack.ProvidePlugin({
+      jquery: "$"
+    })
   ],
 
   // Options affecting the resolving of modules.
@@ -88,10 +91,21 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: __dirname + "/src/",
         loader: "babel"
       }
+    ],
+
+    noParse: [
+      /angular\/angular.js/,
+      /pdfmake.min.js/,
+      /vfs_fonts.js/,
+      /lodash/
     ]
+  },
+
+  externals: {
+    jquery: "$"
   }
 };
 
