@@ -98,6 +98,11 @@ module.exports = {
         test: /\.js$/,
         include: path.join(__dirname, "/src/"),
         loader: "babel"
+      },
+
+      {
+        test: /old.js$/,
+        loader: "imports?workSettings=>{delay:1000}!exports?Work"
       }
     ],
 

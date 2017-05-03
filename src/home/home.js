@@ -5,7 +5,7 @@
 import { welcome } from "../welcome/welcome";
 import angular from "angular";
 
-let old = require("imports?workSettings=>{delay:1000}!exports?Work!old");
+let old = require("old");
 
 if (NODE_ENV == DEV_ENV) {
   welcome("home");
