@@ -9,6 +9,7 @@ const NODE_ENV = process.env.NODE_ENV || DEV_ENV;
 
 const SRC_PATH = path.join(__dirname, "src")
 const DEST_PATH = path.join(__dirname, "public");
+const VENDORS_PATH = path.join(__dirname, "vendors");
 
 const COMMON_NAME = "common";
 
@@ -73,8 +74,12 @@ module.exports = {
   // Options affecting the resolving of modules.
   // http://webpack.github.io/docs/configuration.html#resolve
   resolve: {
+    root: VENDORS_PATH,
     modulesDirectories: ["node_modules", "node_modules/pdfmake/build/"],
-    extentions: ["", ".js"]
+    extentions: ["", ".js"],
+    alias: {
+      old: "old/dist/old"
+    }
   },
 
   // Like resolve but for loaders.
