@@ -14,21 +14,23 @@ function loadVendors() {
 
       alert(momentjs().format('LLLL'));
       console.log(momentjs().format('LLLL'));
-    }, "vendors")
+    }, "vendorsMomentJs");
   }
 
   function loadLodashHandler(e) {
     e.preventDefault();
 
-    let pdf = require("bundle!pdfmake.min.js");
-    let vfsFonts = require("bundle!vfs_fonts.js");
+    require.ensure(["pdfmake.min.js", "vfs_fonts.js"], (require) => {
+      let pdf = require("pdfmake.min.js");
+      let vfsFonts = require("vfs_fonts.js");
+    }, "pdfmakeBundler");
 
     require.ensure(["lodash"], (require) => {
-      let defaults = require("lodash/defaults");
+      let _ = require("lodash");
 
-      alert(defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
-      console.log(defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
-    }, "vendors")
+      alert(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
+      console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
+    }, "vendorsLodash");
   }
 
   loadMomentJsButton.addEventListener("click", loadMomentJsHandler, false);
