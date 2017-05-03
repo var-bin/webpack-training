@@ -109,6 +109,14 @@ module.exports = {
   }
 };
 
+function wrapRegexp(regexp, label) {
+  regexp.test = function (path) {
+    console.log(label, path);
+    return RegExp.prototype.test.call(this, path);
+  };
+  return regexp;
+}
+
 // Uglify JavaScript files if NODE_ENV == PRODUCTION_ENV
 if (NODE_ENV == PRODUCTION_ENV) {
   module.exports.plugins.push(
