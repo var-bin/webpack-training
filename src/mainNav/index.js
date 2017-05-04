@@ -2,6 +2,7 @@
 
 "use strict";
 
+import "./mainNavStyles.css";
 import template from "./mainNav.pug";
 
 class mainNav {
