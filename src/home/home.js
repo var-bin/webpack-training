@@ -20,7 +20,7 @@ let homeMainNav = new mainNav({
   ]
 });
 
-document.body.appendChild(homeMainNav.elem);
+document.body.insertBefore(homeMainNav.elem, document.querySelector("h1"));
 
 let old = require("old");
 
