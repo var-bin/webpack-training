@@ -114,13 +114,13 @@ module.exports = {
 
       // styles
       {
-        test: "\.css$",
+        test: /\.css$/,
         loader: "style!css" // !autoprefixer?browsers=last 2 version
       },
 
       // files
       {
-        test: "\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$",
+        test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
         loader: "file?name=[path][name].[ext]"
       }
     ],
