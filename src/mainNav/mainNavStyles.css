@@ -1,0 +1,26 @@
+/* mainNavStyles.css */
+
+.l-main-nav .main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  padding: 0.5em;
+  font-size: 1.5em;
+  color: #369;
+}
+
+.main-nav li a {
+  text-decoration: none;
+}
+
+.main-nav li a:hover {
+  text-decoration: underline;
+}
