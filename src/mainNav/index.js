@@ -2,7 +2,7 @@
 
 "use strict";
 
-import "./mainNavStyles.css";
+import "./mainNavStyles.scss";
 import template from "./mainNav.pug";
 
 class mainNav {
