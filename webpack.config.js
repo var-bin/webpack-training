@@ -13,6 +13,29 @@ const VENDORS_PATH = path.join(__dirname, "vendors");
 
 const COMMON_NAME = "common";
 
+let svgoConfig = JSON.stringify({
+  plugins: [
+    {
+      removeTitle: true
+    },
+    {
+      convertColors: {
+        shorthex: false
+      }
+    },
+    {
+      convertPathData: false
+    }
+  ]
+});
+
+/*let ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === DEV_ENV
+});*/
+
 module.exports = {
   // The base directory (absolute path!) for resolving the entry option
   // http://webpack.github.io/docs/configuration.html#context
@@ -121,7 +144,19 @@ module.exports = {
       // files
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
-        loader: "file?name=[path][name].[ext]"
+        loader: "file"
+      },
+
+      // svg files
+      {
+        test: /.*\.svg$/,
+        loader: "svgo-loader?" + svgoConfig
+      },
+
+      // scss/sass
+      {
+        test: /\.scss$/,
+        loader: "style!css!sass"
       }
     ],
 
