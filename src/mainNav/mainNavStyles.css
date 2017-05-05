@@ -1,5 +1,7 @@
 /* mainNavStyles.css */
 
+@import "~flag-icon-css/css/flag-icon.min.css";
+
 .l-main-nav .main-nav {
   list-style: none;
   padding: 0;
@@ -15,6 +17,7 @@
   padding: 0.5em;
   font-size: 1.5em;
   color: #369;
+  background-size: contain;
 }
 
 .main-nav li a {
