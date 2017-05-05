@@ -9,3 +9,6 @@ public/*.js
 
 # *.sublime*
 *.sublime*
+
+# public/*[.css|.svg]
+public/*[.css|.svg]

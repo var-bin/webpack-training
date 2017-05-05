@@ -13,6 +13,26 @@ const VENDORS_PATH = path.join(__dirname, "vendors");
 
 const COMMON_NAME = "common";
 
+let svgoConfig = JSON.stringify({
+  plugins: [
+    {
+      removeTitle: true
+    },
+    {
+      convertColors: {
+        shorthex: false
+      }
+    },
+    {
+      convertPathData: false
+    }
+  ]
+});
+
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+let extractSCSS = new ExtractTextPlugin("styles.css");
+
 module.exports = {
   // The base directory (absolute path!) for resolving the entry option
   // http://webpack.github.io/docs/configuration.html#context
@@ -68,7 +88,10 @@ module.exports = {
 
     new webpack.ProvidePlugin({
       jquery: "$"
-    })
+    }),
+
+    // extract styles to independent files
+    extractSCSS
   ],
 
   // Options affecting the resolving of modules.
@@ -100,9 +123,41 @@ module.exports = {
         loader: "babel"
       },
 
+      // legacy files
       {
         test: /old.js$/,
         loader: "imports?workSettings=>{delay:1000}!exports?Work"
+      },
+
+      // templates
+      {
+        test: /\.pug$/,
+        loader: "pug"
+      },
+
+      // styles
+      {
+        test: /\.css$/,
+        loader: "style!css" // !autoprefixer?browsers=last 2 version
+      },
+
+      // files
+      {
+        test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
+        loader: "file"
+      },
+
+      // svg files
+      {
+        test: /.*\.svg$/,
+        loader: "svgo-loader?" + svgoConfig
+      },
+
+      // scss/sass
+      {
+        test: /\.scss$/,
+        loader: extractSCSS.extract(["css", "sass"]),
+        fallback: "style"
       }
     ],
 
