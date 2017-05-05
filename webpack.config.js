@@ -29,12 +29,9 @@ let svgoConfig = JSON.stringify({
   ]
 });
 
-/*let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === DEV_ENV
-});*/
+let extractSCSS = new ExtractTextPlugin("styles.css");
 
 module.exports = {
   // The base directory (absolute path!) for resolving the entry option
@@ -91,7 +88,10 @@ module.exports = {
 
     new webpack.ProvidePlugin({
       jquery: "$"
-    })
+    }),
+
+    // extract styles to independent files
+    extractSCSS
   ],
 
   // Options affecting the resolving of modules.
@@ -156,7 +156,8 @@ module.exports = {
       // scss/sass
       {
         test: /\.scss$/,
-        loader: "style!css!sass"
+        loader: extractSCSS.extract(["css", "sass"]),
+        fallback: "style"
       }
     ],
 
