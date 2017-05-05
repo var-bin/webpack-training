@@ -1,5 +1,38 @@
+/* mainNavStyles.css */
+
+$main-nav__item-color: #369;
+$default-font: Helvetica, sans-serif;
+$default-color: #333;
+
+@import "~flag-icon-css/css/flag-icon.min.css";
+
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
+  font: 100% $default-font;
+  color: $default-color;
 }
 
+.l-main-nav .main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  padding: 0.5em;
+  font-size: 1.5em;
+  color: $main-nav__item-color;
+  background-size: contain;
+}
+
+.main-nav li a {
+  text-decoration: none;
+}
+
+.main-nav li a:hover {
+  text-decoration: underline;
+}
