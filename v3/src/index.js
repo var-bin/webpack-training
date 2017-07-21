@@ -1,3 +1,3 @@
 // index.js
 
-console.log("Hello, world!");
+import fooString from "./foo.js";
