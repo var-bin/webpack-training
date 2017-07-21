@@ -6,7 +6,8 @@
   "author": "Vitalii Rybka",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "devDependencies": {
     "webpack": "^3.3.0"
