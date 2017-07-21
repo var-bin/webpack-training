@@ -1,0 +1,8 @@
+{
+  "name": "webpack-v3",
+  "version": "1.0.0",
+  "description": "webpack@3 training",
+  "main": "index.js",
+  "author": "Vitalii Rybka",
+  "license": "MIT"
+}
