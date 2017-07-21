@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Vitalii Rybka",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
     "webpack": "^3.3.0"
   }
