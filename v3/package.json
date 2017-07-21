@@ -6,9 +6,21 @@
   "author": "Vitalii Rybka",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "devDependencies": {
+    "@types/node": "^8.0.14",
+    "@types/webpack": "^3.0.4",
+    "bundle-buddy": "^0.1.2",
+    "css-loader": "^0.28.4",
+    "extract-loader": "^0.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.3.1",
+    "ts-node": "^3.2.1",
+    "typescript": "^2.4.2",
     "webpack": "^3.3.0"
   }
 }

@@ -1,0 +1,8 @@
+/* styles.css */
+
+.test {
+  background: url("https://source.unsplash.com/random") no-repeat 0 0;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+}
