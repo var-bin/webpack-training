@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch"
+    "build:prod": "yarn build -- -p",
+    "build:dev": "yarn build -- --env.env=dev",
+    "build:watch": "yarn build -- --watch"
   },
   "devDependencies": {
     "@types/node": "^8.0.14",
