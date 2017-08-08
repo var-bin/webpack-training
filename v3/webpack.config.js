@@ -1,3 +1,7 @@
+// webpack.config.js
+
+"use strict";
+
 const commonConfig = require("./buildUtils/webpack.common");
 const moduleConfig = require("./buildUtils/webpack.module");
 const pluginsConfig = require("./buildUtils/webpack.plugins");
