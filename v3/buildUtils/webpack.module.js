@@ -18,7 +18,14 @@ const config = {
           fallback: "style-loader",
           use: [
             {
-              loader: "css-loader"
+              loader: "css-loader",
+              options: {
+                minimize: {
+                  discardComments: {
+                    removeAll: true
+                  }
+                }
+              }
             }
           ]
         })
