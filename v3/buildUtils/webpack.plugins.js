@@ -4,10 +4,12 @@
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+const config = {
   plugins: [
     new ExtractTextPlugin({
       filename: "[name].css"
     })
   ]
-}
+};
+
+module.exports = config;
