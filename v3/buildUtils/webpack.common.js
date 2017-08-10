@@ -4,7 +4,7 @@
 
 const commonPaths = require("./commonPaths");
 
-const common = {
+const config = {
   entry: commonPaths.entryPath,
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
@@ -15,4 +15,4 @@ const common = {
   }
 };
 
-module.exports = common;
+module.exports = config;
