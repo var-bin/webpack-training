@@ -1,5 +1,7 @@
 /* styles.css */
 
+@import '~angularjs-color-picker/dist/angularjs-color-picker.min.css';
+
 .test {
   background: url("https://source.unsplash.com/random") no-repeat 0 0;
   width: 400px;
