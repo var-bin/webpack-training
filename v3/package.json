@@ -23,7 +23,14 @@
     "ts-loader": "^2.3.1",
     "ts-node": "^3.2.1",
     "typescript": "^2.4.2",
+    "uglifyjs-webpack-plugin": "beta",
     "webpack": "^3.3.0",
     "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "@types/angular": "1.5.11",
+    "angular": "1.5.11",
+    "ui-select": "0.19.5",
+    "angularjs-color-picker": "^3.4.3"
   }
 }
