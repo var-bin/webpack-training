@@ -4,7 +4,7 @@
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
+const config = {
   module: {
     rules: [
       {
@@ -25,4 +25,6 @@ module.exports = {
       }
     ]
   }
-}
+};
+
+module.exports = config;
