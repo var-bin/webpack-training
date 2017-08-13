@@ -6,8 +6,12 @@ const path = require("path");
 
 const config = {
   outputPath: path.resolve(__dirname, "../build"),
-  outputFilename: "bundle.js",
-  entryPath: path.resolve("./src/index.ts")
+  outputFilename: "[name].bundle.js",
+  entryPaths: {
+    index: path.resolve("./src/index.ts"),
+    vendors: path.resolve("./src/vendors.ts")
+  },
+  webpackConfigPath: path.resolve(__dirname, "..")
 };
 
 module.exports = config;
