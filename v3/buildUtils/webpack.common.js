@@ -5,7 +5,10 @@
 const commonPaths = require("./commonPaths");
 
 const config = {
-  entry: commonPaths.entryPath,
+  entry: {
+    index: commonPaths.entryPaths.index,
+    vendors: commonPaths.entryPaths.vendors
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js"]
   },
