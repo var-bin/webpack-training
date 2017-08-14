@@ -4,13 +4,18 @@
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJsWebpackPlugin = require("uglifyjs-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+
+const commonPaths = require("./commonPaths");
 
 const config = {
   plugins: [
     new ExtractTextPlugin({
-      filename: "[name].css"
+      filename: "[name].bundle.css"
     }),
-    new UglifyJsWebpackPlugin({
+
+    /* new UglifyJsWebpackPlugin({
       uglifyOptions: {
         compress: {
           drop_console: true,
@@ -20,6 +25,14 @@ const config = {
           beautify: false
         }
       }
+    }) */
+
+    new HtmlWebpackPlugin({
+      title: "test HtmlWebpackPlugin"
+    }),
+
+    new CleanWebpackPlugin([commonPaths.outputPath], {
+      root: commonPaths.webpackConfigPath
     })
   ]
 };

@@ -9,8 +9,6 @@ import bar from "./bar";
 import "./styles/normalize.css";
 import "./styles/styles.css";
 import "./styles/styles-v1.css";
-import "angularjs-color-picker";
-import "ui-select";
 
 angular.module("app", ["color.picker"]);
 
