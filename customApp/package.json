@@ -1,0 +1,16 @@
+{
+  "name": "custom-app",
+  "version": "1.0.0",
+  "description": "simple app for testing webpack@, angularjs@1.5.x, typescript and other tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "angularjs",
+    "typescript"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT"
+}
