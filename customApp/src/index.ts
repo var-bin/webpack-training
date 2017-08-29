@@ -1,8 +1,9 @@
-// index.js
+// index.ts
 
 "use strict";
 
-import _ from "lodash";
+import * as _ from "lodash";
+import "./styles.scss";
 
 function component() {
   var element = document.createElement("div");
