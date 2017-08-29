@@ -4,7 +4,8 @@
   "description": "simple app for testing webpack@, angularjs@1.5.x, typescript and other tools",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [
     "webpack",
@@ -12,5 +13,20 @@
     "typescript"
   ],
   "author": "Vitalii Rybka",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/angular": "^1.6.31",
+    "@types/lodash": "^4.14.74",
+    "@types/webpack": "^3.0.10",
+    "clean-webpack-plugin": "^0.1.16",
+    "ts-loader": "^2.3.4",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.11",
+    "bootstrap-sass": "^3.3.1",
+    "lodash": "^4.17.4",
+    "pdfmake": "^0.1.32"
+  }
 }
