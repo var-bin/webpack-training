@@ -6,8 +6,7 @@ const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-
-console.log("path: ", path.resolve("./src/index.ts"), "\n", path.join("..", "src", "index.ts"));
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
   entry: "./src/index.ts",
@@ -28,27 +27,26 @@ const config = {
 
       {
         test: /\.css$/,
-        use: [{
-          loader: "style-loader"
-        },
-        {
-          loader: "css-loader"
-        }]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader"
+          }]
+        })
       },
 
       /* scss */
       {
         test: /\.scss$/,
-        use: [
-        {
-          loader: "style-loader" // creates style nodes from JS strings
-        },
-        {
-          loader: "css-loader" // translates CSS into CommonJS
-        },
-        {
-          loader: "sass-loader" // compiles Sass to CSS
-        }]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "sass-loader" // compiles Sass to CSS
+          }]
+        })
       },
 
       /* images */
@@ -89,6 +87,10 @@ const config = {
     new HtmlWebpackPlugin({
       title: "Title from HtmlWebpackPlugin",
       template: path.resolve("./index.html")
+    }),
+
+    new ExtractTextPlugin({
+      filename: "css/[name].css"
     })
   ]
 };
