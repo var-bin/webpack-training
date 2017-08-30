@@ -6,7 +6,7 @@
     "typeRoots": ["node_modules/@types"],
     "removeComments": true,
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "es2015",
     "allowJs": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
@@ -15,9 +15,11 @@
     "alwaysStrict": true,
     "skipLibCheck": true
   },
+  "include": [
+    "./src/**/*"
+  ],
   "exclude": [
     "node_modules",
-    "bower_components",
     "build"
   ]
 }
