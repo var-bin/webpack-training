@@ -3,11 +3,14 @@
 "use strict";
 
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.ts",
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js",
     path: path.join(__dirname, "build")
   },
   module: {
@@ -84,5 +87,20 @@ module.exports = {
     modules: [
       path.join(__dirname, "node_modules")
     ]
+  },
+  plugins: [
+    new CleanWebpackPlugin(["build"]),
+
+    new HtmlWebpackPlugin({
+      title: "Title from HtmlWebpackPlugin",
+      template: path.resolve("./index.html")
+    }),
+
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: path.resolve("./build"),
+    port: 3001,
+    hot: true
   }
 };
