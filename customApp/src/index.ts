@@ -5,11 +5,13 @@
 import * as _ from "lodash";
 import "./styles.scss";
 
+import { cube } from "./math";
+
 function component() {
   var element = document.createElement("div");
 
   // Lodash, now imported by this script
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
+  element.innerHTML = _.join(["Hello", "webpack", cube(5)], " ");
 
   return element;
 }
