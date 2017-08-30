@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --color"
+    "start": "webpack-dev-server --color",
+    "prod": "npm run build -- -p"
   },
   "keywords": [
     "webpack",
@@ -30,7 +31,8 @@
     "typescript": "^2.4.2",
     "uglifyjs-webpack-plugin": "^1.0.0-beta.2",
     "webpack": "^3.5.2",
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "angular": "^1.5.11",
