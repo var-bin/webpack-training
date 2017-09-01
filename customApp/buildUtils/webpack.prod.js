@@ -51,6 +51,11 @@ const config = {
       filename: "css/[name].css"
     }),
 
+    /**
+     * Create smaller Lodash builds by replacing feature sets of modules with noop,
+     * identity, or simpler alternatives.
+     * https://git.io/v5Bgl
+     */
     new LodashModuleReplacementPlugin(),
 
     new UglifyJSPlugin({
