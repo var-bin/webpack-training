@@ -4,6 +4,10 @@ class MyController {
   public sayHi() {
     return "Say hi from AngularJS!";
   }
+
+  public onClick() {
+    this.sayHi();
+  }
 }
 
 angular.module("MyApp")
