@@ -7,6 +7,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
+const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
 
 const config = {
   entry: "./src/index.ts",
@@ -19,12 +22,25 @@ const config = {
       /* typescript */
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/
+        loader: "ts-loader",
+        exclude: /node_modules/,
+        options: {
+          happyPackMode: true,
+          // disable type checker - we will use it in fork plugin
+          transpileOnly: true
+        }
+      },
+
+      /* tslint */
+      {
+        test: /\.tsx?$/,
+        enforce: "pre",
+        exclude: /node_modules/,
+        loader: "tslint-loader",
+        options: tsLintLoaderOptions
       },
 
       /* css */
-
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -41,10 +57,12 @@ const config = {
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [{
-            loader: "css-loader" // translates CSS into CommonJS
+            // translates CSS into CommonJS
+            loader: "css-loader"
           },
           {
-            loader: "sass-loader" // compiles Sass to CSS
+            // compiles Sass to CSS
+            loader: "sass-loader"
           }]
         })
       },
@@ -91,7 +109,9 @@ const config = {
 
     new ExtractTextPlugin({
       filename: "css/[name].css"
-    })
+    }),
+
+    new ForkTsCheckerWebpackPlugin()
   ]
 };
 
