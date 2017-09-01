@@ -7,6 +7,7 @@ const os = require("os");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const postcssLoaderOptions = require("../configuration/postcss/postcss-loader");
 
 const config = {
   module: {
@@ -18,6 +19,9 @@ const config = {
           fallback: "style-loader",
           use: [{
             loader: "css-loader"
+          }, {
+            loader: "postcss-loader",
+            options: postcssLoaderOptions
           }]
         })
       },
@@ -30,8 +34,10 @@ const config = {
           use: [{
             // translates CSS into CommonJS
             loader: "css-loader"
-          },
-          {
+          }, {
+            loader: "postcss-loader",
+            options: postcssLoaderOptions
+          }, {
             // compiles Sass to CSS
             loader: "sass-loader"
           }]
