@@ -12,7 +12,10 @@ const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
 const webpack = require("webpack");
 
 const config = {
-  entry: "./src/index.ts",
+  entry: {
+    app: "./src/app.ts",
+    index: "./src/index.ts"
+  },
   output: {
     filename: "[name].bundle.js",
     path: path.join(__dirname, "..", "build")
