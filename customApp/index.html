@@ -8,9 +8,13 @@
     <%= htmlWebpackPlugin.options.title %>
   </title>
 </head>
-<body>
+<body data-ng-app="MyApp">
   <h3>
     sddsdsf 111
   </h3>
+
+  <div data-ng-controller="MyController as MyCtrl">
+    Test: {{ MyCtrl.sayHi() }}
+  </div>
 </body>
 </html>
