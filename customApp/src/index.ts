@@ -4,6 +4,7 @@
 
 import { join } from "lodash";
 import "./styles.scss";
+import "./styles.css";
 
 import { cube } from "./math";
 
