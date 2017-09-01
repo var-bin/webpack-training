@@ -41,6 +41,10 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+
+  /**
+   * https://webpack.js.org/guides/development/#using-webpack-dev-server
+   */
   devServer: {
     contentBase: path.resolve("../build"),
     port: 3001,
