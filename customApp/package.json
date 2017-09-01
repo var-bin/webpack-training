@@ -28,6 +28,7 @@
     "html-webpack-plugin": "^2.30.1",
     "lodash-webpack-plugin": "^0.11.4",
     "node-sass": "^4.5.3",
+    "postcss-csso": "^2.0.0",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
