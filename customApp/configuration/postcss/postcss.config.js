@@ -6,7 +6,8 @@ const config = {
   plugins: [
     require("autoprefixer")({
       browsers: ["last 2 versions"]
-    })
+    }),
+    require("postcss-csso")()
   ]
 };
 
