@@ -16,7 +16,7 @@
   "author": "Vitalii Rybka",
   "license": "MIT",
   "devDependencies": {
-    "@types/angular": "^1.6.31",
+    "@types/angular": "^1.6.32",
     "@types/lodash": "^4.14.74",
     "@types/webpack": "^3.0.10",
     "autoprefixer": "^7.1.3",
