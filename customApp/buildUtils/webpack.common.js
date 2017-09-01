@@ -6,9 +6,7 @@ const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
-
 const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
 
 const config = {
@@ -38,33 +36,6 @@ const config = {
         exclude: /node_modules/,
         loader: "tslint-loader",
         options: tsLintLoaderOptions
-      },
-
-      /* css */
-      {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [{
-            loader: "css-loader"
-          }]
-        })
-      },
-
-      /* scss */
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [{
-            // translates CSS into CommonJS
-            loader: "css-loader"
-          },
-          {
-            // compiles Sass to CSS
-            loader: "sass-loader"
-          }]
-        })
       },
 
       /* images */
@@ -105,10 +76,6 @@ const config = {
     new HtmlWebpackPlugin({
       title: "Title from HtmlWebpackPlugin",
       template: path.resolve("./index.html")
-    }),
-
-    new ExtractTextPlugin({
-      filename: "css/[name].css"
     }),
 
     new ForkTsCheckerWebpackPlugin()
