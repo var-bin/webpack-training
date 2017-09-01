@@ -4,6 +4,7 @@
 
 const path = require("path");
 const webpack = require("webpack");
+const postcssLoaderOptions = require("../configuration/postcss/postcss-loader");
 
 const config = {
   module: {
@@ -15,6 +16,9 @@ const config = {
           loader: "style-loader"
         }, {
           loader: "css-loader"
+        }, {
+          loader: "postcss-loader",
+          options: postcssLoaderOptions
         }]
       },
 
@@ -25,6 +29,9 @@ const config = {
           loader: "style-loader",
         }, {
           loader: "css-loader"
+        }, {
+          loader: "postcss-loader",
+          options: postcssLoaderOptions
         }, {
           loader: "sass-loader"
         }]
