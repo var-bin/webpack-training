@@ -74,6 +74,10 @@ const config = {
     ]
   },
   plugins: [
+    /**
+     * A webpack plugin to remove/clean your build folder(s) before building
+     * https://git.io/v5Bzh
+     */
     new CleanWebpackPlugin(["build"], {
       root: path.resolve(__dirname, "..")
     }),
@@ -91,11 +95,20 @@ const config = {
       }
     }),
 
+    /* This is a webpack plugin that inline your chunks that is written as
+     * links or script using HtmlWebpackPlugin
+     * https://git.io/v5Bzi
+     */
     new InlineChunkWebpackPlugin({
       inlineChunks: ["manifest"]
     }),
 
-    new ForkTsCheckerWebpackPlugin()
+    new ForkTsCheckerWebpackPlugin(),
+
+    /**
+     * https://webpack.js.org/plugins/module-concatenation-plugin
+     */
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 };
 
