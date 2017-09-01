@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
+const webpack = require("webpack");
 
 const config = {
   entry: "./src/index.ts",
@@ -73,9 +74,15 @@ const config = {
       root: path.resolve(__dirname, "..")
     }),
 
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "manifest",
+      minChunks: Infinity
+    }),
+
     new HtmlWebpackPlugin({
       title: "Title from HtmlWebpackPlugin",
-      template: path.resolve("./index.html")
+      template: path.resolve("./index.html"),
+      excludeChunks: ["manifest"]
     }),
 
     new ForkTsCheckerWebpackPlugin()
