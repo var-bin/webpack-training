@@ -8,7 +8,7 @@ import "./styles.scss";
 import { cube } from "./math";
 
 function component() {
-  var element = document.createElement("div");
+  const element = document.createElement("div");
 
   // Lodash, now imported by this script
   element.innerHTML = join(["Hello", "webpack", cube(5)], " ");
