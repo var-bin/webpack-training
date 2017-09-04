@@ -9,6 +9,8 @@ const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const postcssLoaderOptions = require("../configuration/postcss/postcss-loader");
 
+const constants = require("./constants");
+
 const config = {
   module: {
     rules: [
@@ -48,7 +50,7 @@ const config = {
 
   plugins: [
     new ExtractTextPlugin({
-      filename: "css/[name].css"
+      filename: constants.cssFilename
     }),
 
     /**
