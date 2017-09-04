@@ -70,8 +70,7 @@ const config = {
   },
   resolve: {
     modules: [
-      path.resolve(constants.root, "node_modules"),
-      path.resolve("node_modules/pdfmake/build/")
+      path.join(constants.root, "node_modules")
     ],
     extensions: [
       ".tsx",
