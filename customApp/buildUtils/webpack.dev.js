@@ -2,9 +2,10 @@
 
 "use strict";
 
-const path = require("path");
 const webpack = require("webpack");
 const postcssLoaderOptions = require("../configuration/postcss/postcss-loader");
+
+const constants = require("./constants");
 
 const config = {
   module: {
@@ -46,8 +47,8 @@ const config = {
    * https://webpack.js.org/guides/development/#using-webpack-dev-server
    */
   devServer: {
-    contentBase: path.resolve("../build"),
-    port: 3001,
+    contentBase: constants.devServer.contentBase,
+    port: constants.devServer.port,
     stats: "minimal",
     hot: true
   }
