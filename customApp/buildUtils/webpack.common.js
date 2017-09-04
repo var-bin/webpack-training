@@ -2,12 +2,15 @@
 
 "use strict";
 
+const path = require("path");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const InlineChunkWebpackPlugin = require("html-webpack-inline-chunk-plugin");
 const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
 const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const constants = require("./constants");
 
@@ -61,6 +64,10 @@ const config = {
     ]
   },
   resolve: {
+    modules: [
+      path.resolve(constants.root, "node_modules"),
+      path.resolve("node_modules/pdfmake/build/")
+    ],
     extensions: [
       ".tsx",
       ".ts",
@@ -107,7 +114,26 @@ const config = {
     new webpack.ContextReplacementPlugin(
       /moment[\/\\]locale/,
       /(en-gb)\.js/
-    )
+    ),
+
+    /* new CopyWebpackPlugin([
+      {
+        from: path.resolve("../node_modules/pdfmake/build/pdfmake.min.js"),
+        to: path.join("../build", "pdfmake.min.js")
+      },
+      {
+        from: path.resolve("../node_modules/pdfmake/build/vfs_fonts.js"),
+        to: path.join("../build", "vfs_fonts.js")
+      }
+    ]),
+
+    new webpack.ProvidePlugin({
+      pdfMake: "pdfMake"
+    }),
+
+    new webpack.DefinePlugin({
+      pdfMake: JSON.stringify("pdfMake")
+    }) */
   ]
 };
 
