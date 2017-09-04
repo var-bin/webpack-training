@@ -37,6 +37,11 @@ const config = {
           loader: "sass-loader"
         }]
       }
+    ],
+
+    noParse: [
+      /angular\/angular.js/,
+      /lodash\/lodash.js/
     ]
   },
   plugins: [
