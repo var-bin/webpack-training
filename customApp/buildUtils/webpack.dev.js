@@ -48,6 +48,7 @@ const config = {
   devServer: {
     contentBase: path.resolve("../build"),
     port: 3001,
+    stats: "minimal",
     hot: true
   }
 };
