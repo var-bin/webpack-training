@@ -11,15 +11,11 @@ const InlineChunkWebpackPlugin = require("html-webpack-inline-chunk-plugin");
 const tsLintLoaderOptions = require("../configuration/tslint/tslint-loader");
 const webpack = require("webpack");
 
+const constants = require("./constants");
+
 const config = {
-  entry: {
-    app: "./src/app.ts",
-    index: "./src/index.ts"
-  },
-  output: {
-    filename: "[name].bundle.js",
-    path: path.join(__dirname, "..", "build")
-  },
+  entry: constants.entry,
+  output: constants.output,
   module: {
     rules: [
       /* typescript */
@@ -78,18 +74,18 @@ const config = {
      * A webpack plugin to remove/clean your build folder(s) before building
      * https://git.io/v5Bzh
      */
-    new CleanWebpackPlugin(["build"], {
-      root: path.resolve(__dirname, "..")
+    new CleanWebpackPlugin([constants.buildDirectory], {
+      root: constants.root
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: "manifest",
+      name: constants.manifestName,
       minChunks: Infinity
     }),
 
     new HtmlWebpackPlugin({
       title: "Title from HtmlWebpackPlugin",
-      template: path.resolve("./index.html"),
+      template: constants.indexPath,
       minify: {
         collapseWhitespace: true
       }
@@ -100,7 +96,7 @@ const config = {
      * https://git.io/v5Bzi
      */
     new InlineChunkWebpackPlugin({
-      inlineChunks: ["manifest"]
+      inlineChunks: [constants.manifestName]
     }),
 
     new ForkTsCheckerWebpackPlugin(),
