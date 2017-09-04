@@ -108,7 +108,12 @@ const config = {
     /**
      * https://webpack.js.org/plugins/module-concatenation-plugin
      */
-    new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.optimize.ModuleConcatenationPlugin(),
+
+    new webpack.ContextReplacementPlugin(
+      /moment[\/\\]locale/,
+      /(en-gb)\.js/
+    )
   ]
 };
 
