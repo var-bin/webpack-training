@@ -45,7 +45,7 @@ const config = {
         use: [{
           loader: "file-loader",
           options: {
-            name: "images/[name].[ext]"
+            name: constants.imagesFilename
           }
         }]
       },
@@ -56,7 +56,7 @@ const config = {
         use: [{
           loader: "file-loader",
           options: {
-            name: "fonts/[name].[ext]"
+            name: constants.fontsFilename
           }
         }]
       }
