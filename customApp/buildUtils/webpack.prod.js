@@ -45,11 +45,6 @@ const config = {
           }]
         })
       }
-    ],
-
-    noParse: [
-      /angular\/angular.js/,
-      /lodash\/lodash.js/
     ]
   },
 
