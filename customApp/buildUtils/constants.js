@@ -19,7 +19,8 @@ const constants = {
   buildDirectory: BUILD_DIRECTORY,
   entry: {
     app: "./src/app.ts",
-    index: "./src/index.ts"
+    index: "./src/index.ts",
+    app1: "./src/pdfMake/index.ts"
   },
   output: {
     filename: OUTPUT_FILENAME,
