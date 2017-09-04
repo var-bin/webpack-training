@@ -2,7 +2,7 @@
 
 "use sctrict";
 
-const path = require(path);
+const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const BUILD_DIRECTORY = "build";
@@ -35,3 +35,5 @@ const constants = {
     port: 3001
   }
 };
+
+module.exports = constants;
